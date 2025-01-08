@@ -962,6 +962,10 @@ a:hover {
     padding-left: 0 !important;
   }
 
+  .SixthPanel .column.right .prism-code{
+    margin-right: 0px !important;
+  }
+
   /* Section 7 - Participation-feature-card */
   .participation-feature-card__image img {
     width: 50vw;
@@ -996,10 +1000,6 @@ a:hover {
   .app-feature-card__image {
     justify-content: end;
   }
-
-  .organization-feature-cards {
-    height: 30vh;
-  }
 }
 
 /* Styles for screens larger than 1440px */
@@ -1028,6 +1028,12 @@ a:hover {
 
   .SixthPanel {
     align-items: center;
+  }
+
+  /* Section - 2  */
+  
+  .organization-feature-cards {
+    height: 30vh;
   }
 }
 
