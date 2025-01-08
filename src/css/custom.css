@@ -178,13 +178,12 @@ h1.docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
 
 @media (min-width: 997px) {
   .menu_SIkG {
-      flex-grow: 1;
-      padding: 1rem !important;
+    flex-grow: 1;
+    padding: 1rem !important;
   }
 }
 
 /* New */
-
 
 .markdown > h2 {
   --ifm-h2-font-size: 1.875rem;
@@ -760,7 +759,6 @@ a:hover {
   align-items: center;
 }
 
-
 @media only screen and (max-width: 1199px) {
   .app-feature-card {
     flex-direction: column;
@@ -998,6 +996,10 @@ a:hover {
   .app-feature-card__image {
     justify-content: end;
   }
+
+  .organization-feature-cards {
+    height: 30vh;
+  }
 }
 
 /* Styles for screens larger than 1440px */
@@ -1005,7 +1007,8 @@ a:hover {
 @media (min-width: 1920px) {
   .card__description,
   .SixthPanel .left div,
-  .EightPanel p, .card__wide li {
+  .EightPanel p,
+  .card__wide li {
     font-size: 1rem;
   }
   .card__wide li {
@@ -1028,15 +1031,14 @@ a:hover {
   }
 }
 
-
-
 @media only screen and (min-width: 961px) {
-  .TwoColumns, .card__container, .card__wide{
+  .TwoColumns,
+  .card__container,
+  .card__wide {
     width: 70vw;
     max-width: 1280px !important;
   }
   .EightPanel .column {
     padding-right: 0 !important;
   }
-  
 }

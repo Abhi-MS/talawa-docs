@@ -240,7 +240,7 @@
 .NativeDevelopment {
   overflow-y: hidden;
 }
-.NativeDevelopment .left{
+.NativeDevelopment .left {
   margin: auto;
 }
 
@@ -393,8 +393,8 @@
     /* margin-top: -50px; */
     /* Get rid of default left padding */
     /* padding-left: 6rem; */
-    max-width:100%;
-    padding-left:0;
+    max-width: 100%;
+    padding-left: 0;
   }
 
   .SixthPanel .TwoColumns {
