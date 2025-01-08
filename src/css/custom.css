@@ -744,7 +744,7 @@ a:hover {
   flex: 1;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
 }
 .app-feature-card__image img {
@@ -994,6 +994,10 @@ a:hover {
     height: 50vh;
     overflow: hidden;
   }
+
+  .app-feature-card__image {
+    justify-content: end;
+  }
 }
 
 /* Styles for screens larger than 1440px */
@@ -1031,4 +1035,8 @@ a:hover {
     width: 70vw;
     max-width: 1280px !important;
   }
+  .EightPanel .column {
+    padding-right: 0 !important;
+  }
+  
 }
