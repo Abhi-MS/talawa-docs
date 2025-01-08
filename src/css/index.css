@@ -313,9 +313,9 @@
 
 /* Correct for whitespace in the image of phones */
 .SixthPanel .column.left {
-  margin-top: -25px;
+  /* margin-top: -25px;
   padding-top: 30px;
-  left: 300px;
+  left: 300px; */
 }
 
 /* Correction for the bottom space in section six*/
@@ -346,7 +346,7 @@
   border-radius: 0;
   font-size: 80%;
   height: 450px;
-  width: fit-content;
+  width: 100%;
 }
 
 @media only screen and (max-width: 480px) {
@@ -387,14 +387,14 @@
 @media only screen and (min-width: 961px) {
   .SixthPanel .TwoColumns .column.right {
     /* Make flush with top and bottom */
-    margin-top: -50px;
+    /* margin-top: -50px; */
     /* Get rid of default left padding */
-    padding-left: 6rem;
+    /* padding-left: 6rem; */
+    max-width:100%;
+    padding-left:0;
   }
 
   .SixthPanel .TwoColumns {
-    margin-left: 8rem;
-    margin-right: 8rem;
     justify-content: space-between;
   }
 
@@ -624,9 +624,7 @@
 
 @media only screen and (min-width: 961px) {
   .TwoColumns {
-    width: 80vw;
     margin: 0 auto;
-    max-width: 900px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "first last";
   }

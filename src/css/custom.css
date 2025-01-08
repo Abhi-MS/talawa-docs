@@ -534,7 +534,7 @@ a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 3rem;
+  margin: auto;
   gap: 2rem;
 }
 
@@ -563,7 +563,7 @@ a:hover {
   display: flex;
   gap: calc(2rem + 2px);
   padding: 1.5rem 0;
-  margin: 0 10rem;
+  margin: auto;
 }
 
 .card__wide ul {
@@ -628,11 +628,13 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .organization-feature-card {
   max-width: 320px;
+  gap: auto;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -734,15 +736,15 @@ a:hover {
 .app-feature-card {
   display: flex;
   flex-direction: row;
-  padding: 4rem;
+  /* padding: 4rem;
   gap: 5rem;
-  height: 60vh;
+  height: 60vh; */
 }
 .app-feature-card__image {
   flex: 1;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 .app-feature-card__image img {
@@ -790,7 +792,8 @@ a:hover {
 /* Section - 6 */
 
 .SixthPanel .TwoColumns {
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 4fr 7fr;
+  align-items: center;
 }
 
 .SixthPanel .left div {
@@ -1018,5 +1021,14 @@ a:hover {
 
   .SixthPanel {
     align-items: center;
+  }
+}
+
+
+
+@media only screen and (min-width: 961px) {
+  .TwoColumns, .card__container, .card__wide{
+    width: 70vw;
+    max-width: 1280px !important;
   }
 }
