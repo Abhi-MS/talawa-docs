@@ -240,6 +240,9 @@
 .NativeDevelopment {
   overflow-y: hidden;
 }
+.NativeDevelopment .left{
+  margin: auto;
+}
 
 .NativeDevelopment .dissection {
   position: relative;
@@ -273,7 +276,7 @@
 
 @media only screen and (min-width: 961px) {
   .NativeDevelopment .dissection {
-    height: 300px;
+    height: auto;
   }
 }
 
