@@ -64,6 +64,10 @@
   max-width: initial;
 }
 
+.HeaderHero .TwoColumns .column.right {
+  text-align: end;
+}
+
 .HeaderHero .socialLinks {
   display: flex;
   justify-content: flex-end;
@@ -125,10 +129,6 @@
   .HeaderHero .TwoColumns .column.left {
     padding-right: 0;
     width: fit-content;
-  }
-
-  .HeaderHero .TwoColumns .column.right {
-    padding-left: 0;
   }
 }
 

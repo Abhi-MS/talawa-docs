@@ -478,7 +478,6 @@ a:hover {
 .custom-image {
   width: 140%;
   padding: 10px;
-  right: -130px;
   opacity: 2;
 }
 
@@ -938,7 +937,7 @@ a:hover {
 
 @media only screen and (min-width: 1200px) {
   .custom-image {
-    max-width: 20vw;
+    max-width: 100%;
   }
 
   /* Section 1 Hero */
