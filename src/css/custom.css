@@ -673,7 +673,6 @@ a:hover {
 /* Section 4 - native development */
 
 .fourth-panel > .card__wide {
-  height: 75vh;
   align-items: center;
 }
 
@@ -949,6 +948,10 @@ a:hover {
 
   .app-feature-card__image {
     justify-content: end;
+  }
+
+  .fourth-panel > .card__wide {
+    padding: 4rem;
   }
 }
 
