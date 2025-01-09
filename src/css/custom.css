@@ -987,7 +987,6 @@ a:hover {
 @media only screen and (min-width: 1200px) {
   .custom-image {
     max-width: 20vw;
-    margin-left: 5rem;
   }
 
   /* Section 1 Hero */
