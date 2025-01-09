@@ -82,7 +82,6 @@
 
 .HeaderHero .title {
   font-size: 3rem;
-  /* color: #ffffff; */
   line-height: 1;
   margin-top: 0;
   margin-bottom: 20px;
@@ -95,7 +94,6 @@
   font-size: 1.5rem;
   line-height: 1.3;
   font-weight: 500;
-  /* color: #ffffff; */
   margin-top: -7px;
   opacity: 1.1;
   left: -250px;
@@ -134,17 +132,6 @@
   }
 }
 
-/* @media only screen and (min-width: 481px) and (max-width: 960px) {
-  .HeaderHero .column.first {
-    display: flex;
-    justify-content: center;
-  }
-
-  .HeaderHero .column.last {
-    text-align: center;
-  }
-} */
-
 @media only screen and (max-width: 760px) {
   .HeaderHero .title {
     font-size: 60px;
@@ -162,7 +149,6 @@
   }
 }
 
-/* Bounce animation- HeaderHero */
 @keyframes bounce {
   0%,
   20%,
@@ -312,15 +298,6 @@
   padding-top: 95px;
 }
 
-/* Sixth Panel */
-
-/* Correct for whitespace in the image of phones */
-.SixthPanel .column.left {
-  /* margin-top: -25px;
-  padding-top: 30px;
-  left: 300px; */
-}
-
 /* Correction for the bottom space in section six*/
 #docusaurus_skipToContent_fallback
   > section.Section.SixthPanel.tint
@@ -381,18 +358,12 @@
     border-radius: 0;
     font-size: 80%;
     background-color: #fff;
-    /* Monokai background color */
     color: #f8f8f2;
-    /* Monokai default text color */
   }
 }
 
 @media only screen and (min-width: 961px) {
   .SixthPanel .TwoColumns .column.right {
-    /* Make flush with top and bottom */
-    /* margin-top: -50px; */
-    /* Get rid of default left padding */
-    /* padding-left: 6rem; */
     max-width: 100%;
     padding-left: 0;
   }
@@ -435,13 +406,6 @@
   display: flex;
   flex-direction: column;
 }
-
-/* .seventh-panel .content .firstP img {
-  float: left;
-  width: 56px;
-  height: 56px;
-  margin-right: 20px;
-} */
 
 @media only screen and (max-width: 480px) {
   .seventh-panel .Heading {
@@ -538,41 +502,6 @@
   }
 }
 
-/* responsiveness for tablets */
-
-/* @media only screen and (min-width: 481px) and (max-width: 960px) {
-  .ActionButton {
-    max-width: 100%;
-    width: 100%;
-    display: block;
-    white-space: nowrap;
-  }
-
-  .ActionButton.secondary {
-    margin-top: 1rem;
-    margin-left: auto;
-  }
-
-  .custom-image {
-    width: 80%;
-    padding-top: 6rem;
-  }
-
-} */
-
-/* Heading */
-
-/* .Heading {
-  font-size: 25px;
-  color: #29db2c;
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-weight: 700;
-} */
-
-/* Home page */
-
 .HomePage {
   width: 100%;
   overflow-x: hidden;
@@ -594,10 +523,6 @@
     padding-top: 1rem;
   }
 }
-
-/* .Section+.Section {
-  border-top: 1px solid var(--ifm-table-border-color);
-} */
 
 .Section.tint {
   background-color: var(--ifm-hover-overlay);
