@@ -32,22 +32,83 @@ The apps are configured to operate like this:
    1. runs as the `talawa-admin` user.
    2. was originally configured using the setup script using default values in the `.env` file except for these parameters:
       ```
-      REACT_APP_TALAWA_URL=https://demo.talawa.io:8443/graphql/
-      REACT_APP_BACKEND_WEBSOCKET_URL=ws://demo.talawa.io:8443/graphql/
+      REACT_APP_TALAWA_URL=https://demo.talawa.io/graphql/
+      REACT_APP_BACKEND_WEBSOCKET_URL=ws://demo.talawa.io/graphql/
       ```
 
-### Server Configuration
+### Web Server Configuration
 
 The server is configured to operate like this:
 
-2. There is an SSL certificate for demo.talawa.io
-3. The server uses Apache as a frontend reverse proxy. The configuration:
+1. There is an SSL certificate for demo.talawa.io
+2. The server uses Apache as a frontend reverse proxy. The configuration:
    1. Redirects demo.talawa.io port 80 traffic to port 443
    2. Proxies port 443 to the Talawa-Admin port 4321
    3. Proxies port 8443 to the Talawa-API port 4000
-   4. There is no default port 80 or 443 configurations
+   4. There are no default port 80 or 443 configurations
    5. The configurations can be found in `/etc/apache2/sites-enabled`
    6. Logs can be viewed in the `/var/log/apache2/` directory.
+3. Apache Configuration
+
+   ```
+   <VirtualHost 208.109.38.72:443 [2603:3:6106:d440::]:443>
+      ##############################################################################
+      # demo.talawa.io (Talawa-Admin HTTPS on port 443)
+      ##############################################################################
+
+      ServerName  demo.talawa.io
+
+      ##############################################################################
+      # Proxy
+      ##############################################################################
+
+      # Setup the proxy configuration
+      ProxyPreserveHost On
+
+      # Web proxy (API endpoint)
+      ProxyPass /graphql/ http://localhost:4000/graphql/
+      ProxyPassReverse /graphql/ http://localhost:4000/graphql/
+
+      # Web and websocket proxy (Talawa-Admin - Requires "a2enmod proxy_wstunnel")
+      ProxyPass / http://localhost:4321/ upgrade=websocket
+      ProxyPassReverse / http://localhost:4321/
+
+      ##############################################################################
+      # SSL
+      ##############################################################################
+
+      SSLEngine on
+
+      # This file changes each year
+      SSLCertificateFile /path/to/certificate
+
+      # These files don't change year to year
+      SSLCertificateChainFile /path/to/certificate_chain
+      SSLCertificateKeyFile /path/to/certificate_key
+
+      ##############################################################################
+      # Logging
+      ##############################################################################
+
+      LogLevel warn
+      ErrorLog /var/log/apache2/demo.talawa.io_error.log
+      CustomLog /var/log/apache2/demo.talawa.io_access.log combined
+
+      ##############################################################################
+      # Locations (Talawa-API)
+      ##############################################################################
+
+      <Location "/graphql">
+
+         # Enable Cross Origin Resource Sharing (CORS)
+         # Set Access-Control-Allow-Origin (CORS) Header
+         Header set Access-Control-Allow-Origin "*"
+
+      </Location>
+
+   </VirtualHost>
+
+   ```
 
 #### Server Cron Jobs
 
@@ -55,3 +116,11 @@ Daily cron jobs run to do the following:
 
 1. Deploy the latest versions of the API and Admin `develop` code branches.
 2. Reset the API database with the latest `develop` sample data.
+3. Talawa-API CRON file located at `/etc/cron.d/talawa-api`
+   ```
+   0 0 * * * talawa-api cd /home/talawa-api/talawa-api && docker compose -f docker-compose.dev.yaml down --rmi all --volumes && git checkout --force develop && git fetch upstream && git reset upstream/develop --hard && npm install && docker compose -f docker-compose.dev.yaml up --build -d --remove-orphans && docker exec talawa-api-dev /bin/bash -c "npm install -g pnpm && pnpm run import:sample-data && exit"
+   ```
+4. Talawa-Admin CRON file located at `/etc/cron.d/talawa-admin`
+   ```
+   0 0 * * * talawa-admin cd /home/talawa-admin/talawa-admin && docker compose -f docker/docker-compose.dev.yaml down --rmi all --volumes && git checkout --force develop && git fetch upstream && git reset upstream/develop --hard && rm -rf node_modules && npm install && docker compose -f docker/docker-compose.dev.yaml up --build -d --remove-orphans
+   ```
